@@ -5,37 +5,37 @@ CFLAGS = -Wall -Wextra -Werror
 
 INCLUDES = -I includes -I libft
 
-OBJ_DIR     = obj
+SRCS = src/main.c \
+				src/operation.c \
+				src/operation2.c \
+				src/operation3.c \
+				src/parser.c \
+				src/stack.c \
+				src/utils.c \
 
-SRCS = \
-	src/main.c \
+OBJS = $(SRC:.c=.o)
 
-OBJS = $(SRCS:src/%.c=$(OBJ_DIR)/%.o)
-
-LIBFT_DIR = libft
+PRINTF_DIR = ft_printf
+PRINTF = $(PRINTF_DIR)/ft_printf.a
+LIBFT_DIR = $(PRINTF_DIR)libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 all:$(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I . -c $< -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-$(LIBFT):
+$(NAME): $(OBJS)
 	make -C $(LIBFT_DIR)
+	make -C $(PRINTF_DIR)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJS)
 	make -C $(LIBFT_DIR) clean
+	make -C $(PRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFT_DIR) fclean
+	make -C $(PRINTF_DIR) fclean
 
 re: fclean all
 

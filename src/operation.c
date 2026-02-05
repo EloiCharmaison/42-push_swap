@@ -23,7 +23,7 @@ void	sa(t_stack *a)
 	second = pop_node(a);
 	push_node(a, first);
 	push_node(a, first);
-	write (1, "sa\n", 3);
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack *b)
@@ -37,7 +37,7 @@ void	sb(t_stack *b)
 	second = pop_node(b);
 	push_node(b, first);
 	push_node(b, first);
-	write (1, "sb\n", 3);
+	ft_printf("sb\n");
 }
 
 void	ss(t_stack *a, t_stack *b)
@@ -54,7 +54,7 @@ void pa(ta_stack *a, t_stack *b)
 		return ;
 	node = pop_node(b);
 	push_node(a, node);
-	write(1, "pa\n", 3);
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack *b, t_ stack *a)
@@ -65,5 +65,5 @@ void	pb(t_stack *b, t_ stack *a)
 		return ;
 	node = pop_node(a);
 	push_node(b, node);
-	write(1, "pb\n", 3);
+	ft_printf("pb\n");
 }

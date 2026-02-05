@@ -29,7 +29,7 @@ void	rra(t_stack *a)
 	prev->next = NULL;
 	last->next = a->top;
 	a->top = last;
-	write(1, "rra\n", 4);
+	ft_printf("rra\n");
 }
 
 void	rrb(t_stack *b)
@@ -49,7 +49,7 @@ void	rrb(t_stack *b)
 	prev->next = NULL;
 	last->next = b->top;
 	b->top = last;
-	write(1, "rrb\n", 4);
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_stack *a, t_stack *b)

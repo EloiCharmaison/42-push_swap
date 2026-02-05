@@ -26,7 +26,7 @@ void	ra(t_stack *a)
 	last->next = first;
 	first->next = NULL;
 	a->size++;
-	write (1, "ra\n", 3);
+	ft_printf("ra\n");
 }
 
 void	rb(t_stack *b)
@@ -43,7 +43,7 @@ void	rb(t_stack *b)
 	last->next = first;
 	first->next = NULL;
 	b->size++;
-	write (1, "rb\n", 3);
+	ft_printf("rn\n");
 }
 
 void	rr(t_stack *a, t_stack *b)

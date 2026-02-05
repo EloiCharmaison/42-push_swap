@@ -1,32 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 19:24:43 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/04 19:24:43 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/05 22:46:08 by marvin            #+#    #+#             */
+/*   Updated: 2026/02/05 22:46:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "ft_printf/libft/libft.h"
-# include "ft_printf/ft_printf.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-
-typedef struct s_node
-{
-	int				value;
-	struct s_node	*next;
-} t_node;
-
-typedef struct s_stack
-{
-	t_node	*top;
-	int		size;
-} t_stack;
