@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "../push_swap.h"
 
 t_node *new_node(int value)
 {
@@ -18,9 +18,10 @@ t_node *new_node(int value)
 
 	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
-		return (NULL)
+		return (NULL);
 	node->value = value;
 	node->next = NULL;
+	return (node);
 }
 
 void	push_node(t_stack *stack, t_node *node)

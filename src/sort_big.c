@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-static int	*stack_to_array(t_stack *a)
+char	*stack_to_array(t_stack *a)
 {
-	int		*arr;
+	char	*arr;
 	t_node	*tmp;
 	int		i;
 
@@ -31,7 +31,7 @@ static int	*stack_to_array(t_stack *a)
 	return (arr);
 }
 
-static void	sort_array(int *arr, int size)
+void	sort_array(char *arr, int size)
 {
 	int	i;
 	int	j;
@@ -55,11 +55,11 @@ static void	sort_array(int *arr, int size)
 	}
 }
 
-static void	index_stack(t_stack *a)
+void	index_stack(t_stack *a)
 {
 	int		i;
+	char 	*arr;
 	t_node	*tmp;
-	int		i;
 
 	arr = stack_to_array(a);
 	sort_array(arr, a->size);
@@ -88,6 +88,7 @@ void	sort_big(t_stack *a, t_stack *b)
 	int	max_bits;
 	int	size;
 
+	ft_printf("sort_big started\n");
 	index_stack(a);
 	size = a->size;
 	max_bits = 0;
@@ -97,13 +98,13 @@ void	sort_big(t_stack *a, t_stack *b)
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j < size)
+		while (j++ < size)
 		{
+			ft_printf("--------------------------\n");
 			if (((a->top->value >> i) & 1) == 0)
 				pb(a, b);
 			else
 				ra(a);
-			j++;
 		}
 		while (b->size > 0)
 			pa(a, b);

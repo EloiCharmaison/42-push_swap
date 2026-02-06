@@ -12,12 +12,14 @@ SRCS = src/main.c \
 				src/parser.c \
 				src/stack.c \
 				src/utils.c \
+				src/sort_small.c \
+				src/sort_big.c
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
 PRINTF_DIR = ft_printf
 PRINTF = $(PRINTF_DIR)/ft_printf.a
-LIBFT_DIR = $(PRINTF_DIR)libft
+LIBFT_DIR = $(PRINTF_DIR)/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 all:$(NAME)

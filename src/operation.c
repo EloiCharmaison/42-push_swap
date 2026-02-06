@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sa(t_stack *a)
 {
@@ -22,7 +22,7 @@ void	sa(t_stack *a)
 	first = pop_node(a);
 	second = pop_node(a);
 	push_node(a, first);
-	push_node(a, first);
+	push_node(a, second);
 	ft_printf("sa\n");
 }
 
@@ -36,7 +36,7 @@ void	sb(t_stack *b)
 	first = pop_node(b);
 	second = pop_node(b);
 	push_node(b, first);
-	push_node(b, first);
+	push_node(b, second);
 	ft_printf("sb\n");
 }
 
@@ -46,7 +46,7 @@ void	ss(t_stack *a, t_stack *b)
 	sb(b);
 }
 
-void pa(ta_stack *a, t_stack *b)
+void pa(t_stack *a, t_stack *b)
 {
 	t_node *node;
 
@@ -57,7 +57,7 @@ void pa(ta_stack *a, t_stack *b)
 	ft_printf("pa\n");
 }
 
-void	pb(t_stack *b, t_ stack *a)
+void	pb(t_stack *b, t_stack *a)
 {
 	t_node *node;
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	error_exit(void)
 {
@@ -36,7 +36,36 @@ int	is_sorted(t_stack *stack)
 
 int	stack_size(t_stack *stack)
 {
-	if (!satck)
+	if (!stack)
 		return (0);
 	return ( stack->size);
+}
+
+int	get_min(t_stack *a)
+{
+	t_node	*tmp;
+	int		min;
+
+	tmp = a->top;
+	min = tmp->value;
+	while (tmp)
+	{
+		if (tmp->value < min)
+			min = tmp->value;
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+void	free_stack(t_stack *stack)
+{
+	t_node	*tmp;
+
+	while (stack->top)
+	{
+		tmp = stack->top;
+		stack->top = stack->top->next;
+		free(tmp);
+	}
+	stack->size = 0;
 }

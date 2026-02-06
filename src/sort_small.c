@@ -10,25 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-static int	get_min(t_stack *a)
-{
-	t_node	*tmp;
-	int		min;
-
-	tmp = a->top;
-	min = tmp->value;
-	while (tmp)
-	{
-		if (tmp->value < min)
-			min = tmp->value;
-		tmp = tmp->next;
-	}
-	return (min);
-}
-
-static int	get_position(t_stack *a, int value)
+int	get_position(t_stack *a, int value)
 {
 	t_node *tmp;
 	int		pos;
@@ -45,13 +29,13 @@ static int	get_position(t_stack *a, int value)
 	return (-1);
 }
 
-static void	sort_two(t_stack *a)
+void	sort_two(t_stack *a)
 {
 	if (a->top->value > a->top->next->value)
 		sa(a);
 }
 
-static void sort_three(t_stack *a)
+void sort_three(t_stack *a)
 {
 	int	first;
 	int	second;
@@ -77,7 +61,7 @@ static void sort_three(t_stack *a)
 	else if (first < second && second > third && first > third)
 		rra(a);
 }
-static void	push_min_to_b(t_stack *a, t_stack *b)
+void	push_min_to_b(t_stack *a, t_stack *b)
 {
 	int	min;
 	int	pos;
