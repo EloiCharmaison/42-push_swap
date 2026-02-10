@@ -19,13 +19,13 @@ void	ra(t_stack *a)
 
 	if (!a || a->size < 2)
 		return ;
-	first = pop_node(a);
+	first = a->top;
+	a->top = first->next;
 	last = a->top;
 	while (last->next)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
-	a->size++;
 	ft_printf("ra\n");
 }
 
@@ -43,7 +43,7 @@ void	rb(t_stack *b)
 	last->next = first;
 	first->next = NULL;
 	b->size++;
-	ft_printf("rn\n");
+	ft_printf("rb\n");
 }
 
 void	rr(t_stack *a, t_stack *b)

@@ -34,4 +34,7 @@ int	main(int argc, char **argv)
 		else
 			sort_big(&a, &b);
 	}
+	free_stack(&a);
+	free_stack(&b);
+	return (0);
 }

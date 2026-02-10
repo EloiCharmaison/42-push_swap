@@ -75,7 +75,7 @@ void	push_min_to_b(t_stack *a, t_stack *b)
 	}
 	else
 	{
-		while (pos++ , a->size)
+		while (pos++ < a->size)
 			rra(a);
 	}
 	pb(a, b);
@@ -87,7 +87,7 @@ void	sort_small(t_stack *a, t_stack *b)
 		sort_two(a);
 	else if (a->size == 3)
 		sort_three(a);
-	else if (a->size)
+	else if (a->size == 4)
 	{
 		push_min_to_b(a, b);
 		sort_three(a);

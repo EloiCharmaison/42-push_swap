@@ -21,8 +21,8 @@ void	sa(t_stack *a)
 		return ;
 	first = pop_node(a);
 	second = pop_node(a);
-	push_node(a, first);
 	push_node(a, second);
+	push_node(a, first);
 	ft_printf("sa\n");
 }
 
