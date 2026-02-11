@@ -1,40 +1,39 @@
 /* ************************************************************************** */
-
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: echarmai <echarmai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/04 23:32:53 by marvin            #+#    #+#             */
-/*   Updated: 2026/02/04 23:32:53 by marvin           ###   ########.fr       */
+/*   Created: 2026/02/11 11:41:47 by echarmai          #+#    #+#             */
+/*   Updated: 2026/02/11 11:41:47 by echarmai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-/*
-** Vérifie si la string est un nombre valide
-*/
-int is_valid_number(char *str)
+int	is_valid_number(char *str)
 {
-    int i = 0;
+	int	i;
 
-    if (str[i] == '+' || str[i] == '-')
-        i++;
-    if (!str[i])
-        return (0);
-    while (str[i])
-    {
-        if (str[i] < '0' || str[i] > '9')
-            return (0);
-        i++;
-    }
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
 	return (1);
 }
 
 int	ft_atoi_ps(const char *str, int *error)
 {
-	long result;
-	int sign;
+	long	result;
+	int		sign;
 
 	result = 0;
 	sign = 1;

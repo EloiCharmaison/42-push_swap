@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-char	*stack_to_array(t_stack *a)
+int	*stack_to_array(t_stack *a)
 {
-	char	*arr;
+	int		*arr;
 	t_node	*tmp;
 	int		i;
 
@@ -31,7 +31,7 @@ char	*stack_to_array(t_stack *a)
 	return (arr);
 }
 
-void	sort_array(char *arr, int size)
+void	sort_array(int *arr, int size)
 {
 	int	i;
 	int	j;
@@ -58,7 +58,7 @@ void	sort_array(char *arr, int size)
 void	index_stack(t_stack *a)
 {
 	int		i;
-	char 	*arr;
+	int		*arr;
 	t_node	*tmp;
 
 	arr = stack_to_array(a);
@@ -72,7 +72,7 @@ void	index_stack(t_stack *a)
 			if (tmp->value == arr[i])
 			{
 				tmp->value = i;
-				break;
+				break ;
 			}
 			i++;
 		}
@@ -92,7 +92,7 @@ void	sort_big(t_stack *a, t_stack *b)
 	index_stack(a);
 	size = a->size;
 	max_bits = 0;
-	while((size - 1) >> max_bits)
+	while ((size - 1) >> max_bits)
 		max_bits++;
 	i = 0;
 	while (i < max_bits)

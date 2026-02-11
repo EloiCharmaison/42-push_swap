@@ -14,8 +14,8 @@
 
 void	sa(t_stack *a)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	if (!a || a->size < 2)
 		return ;
@@ -28,8 +28,8 @@ void	sa(t_stack *a)
 
 void	sb(t_stack *b)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	if (!b || b->size < 2)
 		return ;
@@ -46,9 +46,9 @@ void	ss(t_stack *a, t_stack *b)
 	sb(b);
 }
 
-void pa(t_stack *a, t_stack *b)
+void	pa(t_stack *a, t_stack *b)
 {
-	t_node *node;
+	t_node	*node;
 
 	if (!b || b->size == 0)
 		return ;
@@ -59,7 +59,7 @@ void pa(t_stack *a, t_stack *b)
 
 void	pb(t_stack *b, t_stack *a)
 {
-	t_node *node;
+	t_node	*node;
 
 	if (!a || a->size == 0)
 		return ;

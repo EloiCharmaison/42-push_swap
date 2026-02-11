@@ -14,7 +14,7 @@
 
 int	get_position(t_stack *a, int value)
 {
-	t_node *tmp;
+	t_node	*tmp;
 	int		pos;
 
 	tmp = a->top;
@@ -35,7 +35,7 @@ void	sort_two(t_stack *a)
 		sa(a);
 }
 
-void sort_three(t_stack *a)
+void	sort_three(t_stack *a)
 {
 	int	first;
 	int	second;
@@ -61,6 +61,7 @@ void sort_three(t_stack *a)
 	else if (first < second && second > third && first > third)
 		rra(a);
 }
+
 void	push_min_to_b(t_stack *a, t_stack *b)
 {
 	int	min;
@@ -75,7 +76,7 @@ void	push_min_to_b(t_stack *a, t_stack *b)
 	}
 	else
 	{
-		while (pos++ < a->size)
+		while (pos++ < a->size - 1)
 			rra(a);
 	}
 	pb(a, b);

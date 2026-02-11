@@ -14,17 +14,17 @@
 
 void	error_exit(void)
 {
-	write(2, "Error\n", 6);
+	ft_printf("Error !\n");
 	exit (EXIT_FAILURE);
 }
 
 int	is_sorted(t_stack *stack)
 {
-	t_node *current;
+	t_node	*current;
 
 	if (!stack || stack->size < 2)
 		return (1);
-	current	 = stack->top;
+	current = stack->top;
 	while (current->next)
 	{
 		if (current->value > current->next->value)
@@ -38,7 +38,7 @@ int	stack_size(t_stack *stack)
 {
 	if (!stack)
 		return (0);
-	return ( stack->size);
+	return (stack->size);
 }
 
 int	get_min(t_stack *a)

@@ -14,8 +14,8 @@
 
 void	rra(t_stack *a)
 {
-	t_node *prev;
-	t_node *last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (!a || a->size < 2)
 		return ;
@@ -34,8 +34,8 @@ void	rra(t_stack *a)
 
 void	rrb(t_stack *b)
 {
-	t_node *prev;
-	t_node *last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (!b || b->size < 2)
 		return ;

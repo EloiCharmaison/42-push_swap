@@ -14,17 +14,15 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack a;
-	t_stack b;
-	
+	t_stack	a;
+	t_stack	b;
+
 	if (argc < 2)
 		return (0);
-	
 	a.top = NULL;
 	a.size = 0;
 	b.top = NULL;
 	b.size = 0;
-	
 	fill_stack(argc, argv, &a);
 
 	if (!is_sorted(&a))

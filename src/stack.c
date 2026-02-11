@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-t_node *new_node(int value)
+t_node	*new_node(int value)
 {
-	t_node *node;
+	t_node	*node;
 
 	node = (t_node *)malloc(sizeof(t_node));
 	if (!node)
@@ -35,7 +35,8 @@ void	push_node(t_stack *stack, t_node *node)
 
 t_node	*pop_node(t_stack *stack)
 {
-	t_node *node;
+	t_node	*node;
+
 	if (!stack || !stack->top)
 		return (NULL);
 	node = stack->top;
