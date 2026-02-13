@@ -66,6 +66,7 @@ void	push_min_to_b(t_stack *a, t_stack *b)
 {
 	int	min;
 	int	pos;
+	int	rotation;
 
 	min = get_min(a);
 	pos = get_position(a, min);
@@ -76,7 +77,8 @@ void	push_min_to_b(t_stack *a, t_stack *b)
 	}
 	else
 	{
-		while (pos++ < a->size - 1)
+		rotation = a->size - pos;
+		while (rotation-- > 0)
 			rra(a);
 	}
 	pb(a, b);

@@ -88,7 +88,6 @@ void	sort_big(t_stack *a, t_stack *b)
 	int	max_bits;
 	int	size;
 
-	ft_printf("sort_big started\n");
 	index_stack(a);
 	size = a->size;
 	max_bits = 0;
@@ -100,7 +99,6 @@ void	sort_big(t_stack *a, t_stack *b)
 		j = 0;
 		while (j++ < size)
 		{
-			ft_printf("--------------------------\n");
 			if (((a->top->value >> i) & 1) == 0)
 				pb(a, b);
 			else

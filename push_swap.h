@@ -63,5 +63,6 @@ void	sort_array(int *arr, int size);
 void	index_stack(t_stack *a);
 void	sort_big(t_stack *a, t_stack *b);
 void	free_stack(t_stack *stack);
+char	**check_arguments(int argc, char **argv);
 
 #endif
