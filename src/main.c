@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	b.top = NULL;
 	b.size = 0;
 	if (argc == 2)
-		fill_stack(argc, ft_split(argv[1], " "), &a);
+		fill_stack(argc, ft_split(argv[1], ' '), &a);
 	else
 		fill_stack(argc, argv, &a);
 
