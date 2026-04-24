@@ -58,15 +58,12 @@ int	arg_check(int argc, char **argv, t_stack *a)
 	{
 		args = ft_split(argv[1], ' ');
 		if (!args || !args[0])
-		{
-			free_tab(args);
-			return (0);
-		}
+			free_exit(args, NULL);
 		len = 0;
 		while (args[len])
 			len++;
 		if (len == 1)
-			error_exit(a);
+			free_exit(args, a);
 		fill_stack(len, args, a);
 		free_tab(args);
 	}
@@ -90,4 +87,10 @@ void	free_tab(char **tab)
 		i++;
 	}
 	free(tab);
+}
+
+void	free_exit(char **tab, t_stack *a)
+{
+	free_tab(tab);
+	error_exit(a);
 }

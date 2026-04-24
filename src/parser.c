@@ -73,7 +73,7 @@ void	fill_stack(int count, char **argv, t_stack *stack)
 		if (error)
 			error_exit(stack);
 		if (has_value(stack, value))
-			error_exit(stack);
+			error_exit(a);
 		node = new_node(value);
 		if (!node)
 			error_exit(stack);

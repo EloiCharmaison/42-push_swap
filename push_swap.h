@@ -68,5 +68,6 @@ void	print_stack(t_stack *a);
 int		arg_check(int argc, char **argv, t_stack *a);
 void	free_tab(char **tab);
 int		has_value(t_stack *stack, int value);
+void	free_exit(char **tab, t_stack *a);
 
 #endif
