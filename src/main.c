@@ -17,17 +17,14 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
-	if (argc < 1)
-		return (0);
+	if (argc < 2)
+		error_exit(&a);
 	a.top = NULL;
 	a.size = 0;
 	b.top = NULL;
 	b.size = 0;
-	if (argc == 2)
-		fill_stack(argc, ft_split(argv[1], ' '), &a);
-	else
-		fill_stack(argc, argv, &a);
-
+	if (!arg_check(argc, argv, &a))
+		return (0);
 	if (!is_sorted(&a))
 	{
 		if (a.size <= 5)
@@ -38,4 +35,59 @@ int	main(int argc, char **argv)
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
+}
+
+void	print_stack(t_stack *a)
+{
+	t_node *current;
+
+	current = a->top;
+	while (current != NULL)
+	{
+		ft_printf("%d ", current->value);
+		current = current->next;
+	}
+}
+
+int	arg_check(int argc, char **argv, t_stack *a)
+{
+	char	**args;
+	int		len;
+
+	if (argc == 2)
+	{
+		args = ft_split(argv[1], ' ');
+		if (!args || !args[0])
+		{
+			free_tab(args);
+			return (0);
+		}
+		len = 0;
+		while (args[len])
+			len++;
+		if (len == 1)
+			error_exit(a);
+		fill_stack(len, args, a);
+		free_tab(args);
+	}
+	else if (argc > 2)
+		fill_stack(argc - 1, argv + 1, a);
+	else
+		error_exit(a);
+	return (1);
+}
+
+void	free_tab(char **tab)
+{
+	int	i;
+
+	if (!tab)
+		return ;
+	i = 0;
+	while (tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 }

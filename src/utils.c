@@ -12,9 +12,11 @@
 
 #include "../push_swap.h"
 
-void	error_exit(void)
+void	error_exit(t_stack *stack)
 {
-	ft_printf("Error !\n");
+	if (stack)
+		free_stack(stack);
+	ft_printf("Error\n");
 	exit (EXIT_FAILURE);
 }
 

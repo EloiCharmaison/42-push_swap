@@ -20,7 +20,7 @@ int	*stack_to_array(t_stack *a)
 
 	arr = malloc(sizeof(int) * a->size);
 	if (!arr)
-		error_exit();
+		error_exit(a);
 	tmp = a->top;
 	i = 0;
 	while (tmp)

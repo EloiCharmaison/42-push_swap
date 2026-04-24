@@ -49,7 +49,7 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
-void	error_exit(void);
+void	error_exit(t_stack *stack);
 int		is_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
 int		get_min(t_stack *a);
@@ -64,5 +64,9 @@ void	index_stack(t_stack *a);
 void	sort_big(t_stack *a, t_stack *b);
 void	free_stack(t_stack *stack);
 char	**check_arguments(int argc, char **argv);
+void	print_stack(t_stack *a);
+int		arg_check(int argc, char **argv, t_stack *a);
+void	free_tab(char **tab);
+int		has_value(t_stack *stack, int value);
 
 #endif

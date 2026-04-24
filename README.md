@@ -52,6 +52,3 @@ make
 
 ### Execution
 ./push_swap 4 3 2 1
-
-### Checker
-./push_swap 4 3 2 1
