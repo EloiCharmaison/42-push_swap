@@ -34,7 +34,7 @@ typedef struct s_stack
 int		main(int argc, char **argv);
 int		is_valid_number(char *str);
 int		ft_atoi_ps(const char *str, int *error);
-void	fill_stack(int argc, char **argv, t_stack *stack);
+int		fill_stack(int argc, char **argv, t_stack *stack);
 t_node	*new_node(int value);
 void	push_node(t_stack *stack, t_node *node);
 t_node	*pop_node(t_stack *stack);

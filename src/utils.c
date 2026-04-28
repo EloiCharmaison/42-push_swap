@@ -16,7 +16,7 @@ void	error_exit(t_stack *stack)
 {
 	if (stack)
 		free_stack(stack);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit (EXIT_FAILURE);
 }
 

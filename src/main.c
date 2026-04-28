@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 
 void	print_stack(t_stack *a)
 {
-	t_node *current;
+	t_node	*current;
 
 	current = a->top;
 	while (current != NULL)
@@ -64,13 +64,16 @@ int	arg_check(int argc, char **argv, t_stack *a)
 			len++;
 		if (len == 1)
 			free_exit(args, a);
-		fill_stack(len, args, a);
+		if (!fill_stack(len, args, a))
+		{
+			free_tab(args);
+			error_exit(a);
+		}
 		free_tab(args);
 	}
 	else if (argc > 2)
-		fill_stack(argc - 1, argv + 1, a);
-	else
-		error_exit(a);
+		if (!fill_stack(argc - 1, argv + 1, a))
+			error_exit(a);
 	return (1);
 }
 

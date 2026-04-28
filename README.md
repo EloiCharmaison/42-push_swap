@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by echarmai.*
+*This project has been created as part of the 42 curriculum by <echarmai>.*
 
 # push_swap
 
@@ -27,28 +27,12 @@ Allowed operations:
 
 The challenge is not only to sort the numbers, but to do so efficiently with as few moves as possible.
 
----
-
-## Algorithm Overview
-
-This implementation includes:
-
-- Hardcoded optimal sorting for:
-  - 2 numbers
-  - 3 numbers
-  - 4 numbers
-  - 5 numbers
-- A stack-based strategy using:
-  - Position tracking
-  - Smart rotations (`ra` vs `rra`) based on element position
-- A larger-scale sorting strategy for bigger inputs
-
-The program minimizes unnecessary rotations by calculating whether it is faster to rotate forward or backward.
-
----
-
-### Compilation
+## Instruction
 make
-
-### Execution
 ./push_swap 4 3 2 1
+./push_swap "4 3 2 1"
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
+
+## Ressource
+
+Usage of AI to understand and clarify concepts and debugging errors.

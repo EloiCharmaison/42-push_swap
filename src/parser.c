@@ -57,7 +57,7 @@ int	ft_atoi_ps(const char *str, int *error)
 	return ((int)(result * sign));
 }
 
-void	fill_stack(int count, char **argv, t_stack *stack)
+int	fill_stack(int count, char **argv, t_stack *stack)
 {
 	int		i;
 	int		value;
@@ -68,26 +68,27 @@ void	fill_stack(int count, char **argv, t_stack *stack)
 	while (i >= 0)
 	{
 		if (!is_valid_number(argv[i]))
-			error_exit(stack);
+			return (0);
 		value = ft_atoi_ps(argv[i], &error);
 		if (error)
-			error_exit(stack);
+			return (0);
 		if (has_value(stack, value))
-			error_exit(a);
+			return (0);
 		node = new_node(value);
 		if (!node)
-			error_exit(stack);
+			return (0);
 		push_node(stack, node);
 		i--;
 	}
+	return (1);
 }
 
 int	has_value(t_stack *stack, int value)
 {
-	t_node *current;
+	t_node	*current;
 
 	current = stack->top;
-	while(current)
+	while (current)
 	{
 		if (current->value == value)
 			return (1);
